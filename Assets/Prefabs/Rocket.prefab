@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7147194211902311003}
   - component: {fileID: 539641767}
   - component: {fileID: 539641766}
+  - component: {fileID: 6847295726759091887}
   - component: {fileID: 771461931}
   m_Layer: 0
   m_Name: Rocket
@@ -130,6 +131,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainThrust: 1000
   rotationThrust: 100
+--- !u!114 &6847295726759091887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147194211902311000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c77814c01318f428ff06333132ffd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &771461931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -141,10 +154,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f3bad4cdb50cd442955ad17446d65d8, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.373
-  m_Pitch: 1
-  Loop: 0
+  m_PlayOnAwake: 0
+  m_Volume: 0.197
+  m_Pitch: -1.69
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -153,7 +166,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
