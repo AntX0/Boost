@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    AudioSource audioSource;
-    Rigidbody rb;
     [SerializeField] float mainThrust;
     [SerializeField] float rotationThrust;
+    [SerializeField] AudioClip engineThrust;
+
+    AudioSource audioSource;
+    Rigidbody rb;
+
+    bool isAlive;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +31,16 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if (audioSource.isPlaying == false)
-                audioSource.Play();
+            if (!audioSource.isPlaying)
+            {
+                /*audioSource.Play();*/
+                audioSource.PlayOneShot(engineThrust, 1f);
+                Debug.Log("Playing Audio");
+            }
+        }
+        else if (gameObject.tag == "Crashed")
+        {
+            Debug.Log("Crash");
         }
         else
         {

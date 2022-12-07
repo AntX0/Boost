@@ -1,12 +1,22 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private float _levelLoadDelay;
+    [SerializeField] private AudioClip _crashSound;
+    [SerializeField] private AudioClip _successSound;
 
-    private void OnCollisionEnter(Collision other)
+    AudioSource audioSource;
+
+    void Start()
+    {
+       audioSource = GetComponent<AudioSource>();
+    }
+
+    void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
         {
@@ -22,18 +32,25 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    private void StartSuccessSequence()
+    void StartSuccessSequence()
     {
+        audioSource.PlayOneShot(_successSound, 1f);
+
         GetComponent<Movement>().enabled = false;
+
         Invoke("LoadNextLevel", _levelLoadDelay);
     }
 
     void StartCrashSequence()
     {
+        audioSource.PlayOneShot(_crashSound, 1f);
+   
         GetComponent<Movement>().enabled = false;
-        GetComponent<AudioSource>().enabled = false;
+
         gameObject.tag = "Crashed";
+
         Invoke("ReloadLevel", _levelLoadDelay);
+        Debug.Log("234");
     }
 
     void ReloadLevel()
