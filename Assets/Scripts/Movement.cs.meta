@@ -4,7 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - engineThrust: {fileID: 8300000, guid: 4f3bad4cdb50cd442955ad17446d65d8, type: 3}
+  - engineThrust: {instanceID: 0}
+  - _mainEngineParcticles: {instanceID: 0}
+  - _rightEngineParcticles: {instanceID: 0}
+  - _leftEngineParcticles: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

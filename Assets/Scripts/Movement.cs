@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -16,7 +17,7 @@ public class Movement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -108,4 +109,3 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = false;
     }
 }
-

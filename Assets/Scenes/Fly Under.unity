@@ -299,8 +299,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.23416714, y: 0.027563587, z: -0.006641901, w: 0.97178286}
-  m_LocalPosition: {x: -4.790001, y: 5.6399994, z: -9.760014}
+  m_LocalRotation: {x: 0.23365568, y: 0.02720991, z: -0.0065414556, w: 0.9719166}
+  m_LocalPosition: {x: -4.830001, y: 6.04, z: -10.560018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0.31624624, y: 3.3564997, z: 6.55263}
+  m_FollowOffset: {x: 0.3494548, y: 3.7565, z: 7.352944}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -498,8 +498,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106010149}
-  m_LocalRotation: {x: 0.23416714, y: 0.027563587, z: -0.006641901, w: 0.97178286}
-  m_LocalPosition: {x: -4.790001, y: 5.6399994, z: -9.760014}
+  m_LocalRotation: {x: 0.23365568, y: 0.02720991, z: -0.0065414556, w: 0.9719166}
+  m_LocalPosition: {x: -4.830001, y: 6.04, z: -10.560018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -777,7 +777,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8438035246662731771, guid: a7ca8ec58da20c54fafd08516ec73941, type: 3}
+    - {fileID: 7211090514674994192, guid: a7ca8ec58da20c54fafd08516ec73941, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a7ca8ec58da20c54fafd08516ec73941, type: 3}
 --- !u!1001 &7155415400862726325
 PrefabInstance:

@@ -13,18 +13,25 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private ParticleSystem _successParticles;
 
     AudioSource audioSource;
+    BoxCollider boxCollider;
 
     bool isTransitoning = false;
 
     void Start()
     {
-       audioSource = GetComponent<AudioSource>();
+        boxCollider = GetComponent<BoxCollider>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        ExecuteCheatCommands();
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if(isTransitoning) { return; }
-       
+        if (isTransitoning) { return; }
+
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -46,7 +53,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(_successSound, 1f);
         _successParticles.Play();
-        
+
         GetComponent<Movement>().enabled = false;
 
         Invoke("LoadNextLevel", _levelLoadDelay);
@@ -74,17 +81,41 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex);
     }
 
-    void LoadNextLevel()
+    private void LoadNextLevel()
     {
-         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;  
-         int nextSceneIndex = currentSceneIndex + 1;
-         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
-         {
-                nextSceneIndex = 0;
-         }
-         if (gameObject.tag != "Crashed")
-         {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        if (gameObject.tag != "Crashed")
+        {
             SceneManager.LoadScene(nextSceneIndex);
-         }
-    } 
+        }
+    }
+
+    private void ExecuteCheatCommands()
+    {
+        if (Input.GetKey(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        if (Input.GetKey(KeyCode.C))
+        {
+            DissableCollisions();
+        }
+    }
+
+    private void DissableCollisions()
+    {
+        if (boxCollider.enabled)
+        {
+            boxCollider.enabled = false;
+        }
+        else
+        {
+            boxCollider.enabled = true;
+        }
+    }
 }
