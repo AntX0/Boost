@@ -9,6 +9,9 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] private AudioClip _crashSound;
     [SerializeField] private AudioClip _successSound;
 
+    [SerializeField] private ParticleSystem _crashParticles;
+    [SerializeField] private ParticleSystem _successParticles;
+
     AudioSource audioSource;
 
     bool isTransitoning = false;
@@ -42,6 +45,7 @@ public class CollisionHandler : MonoBehaviour
 
         audioSource.Stop();
         audioSource.PlayOneShot(_successSound, 1f);
+        _successParticles.Play();
         
         GetComponent<Movement>().enabled = false;
 
@@ -54,7 +58,8 @@ public class CollisionHandler : MonoBehaviour
 
         audioSource.Stop();
         audioSource.PlayOneShot(_crashSound, 1f);
-        
+        _crashParticles.Play();
+
         GetComponent<Movement>().enabled = false;
 
         gameObject.tag = "Crashed";
