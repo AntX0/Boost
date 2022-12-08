@@ -81,7 +81,7 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex);
     }
 
-    private void LoadNextLevel()
+    void LoadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -109,13 +109,6 @@ public class CollisionHandler : MonoBehaviour
 
     private void DissableCollisions()
     {
-        if (boxCollider.enabled)
-        {
-            boxCollider.enabled = false;
-        }
-        else
-        {
-            boxCollider.enabled = true;
-        }
+        boxCollider.enabled = !boxCollider.enabled;
     }
 }
