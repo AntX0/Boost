@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 539641767}
   - component: {fileID: 539641766}
   - component: {fileID: 6847295726759091887}
+  - component: {fileID: 3220744423740658198}
   - component: {fileID: 771461931}
   - component: {fileID: 7044655213333312981}
   m_Layer: 0
@@ -617,6 +618,18 @@ MonoBehaviour:
   _successSound: {fileID: 8300000, guid: 2c24a497e9287d54eb1cb5e4ac73f7d9, type: 3}
   _crashParticles: {fileID: 3729774667684692722}
   _successParticles: {fileID: 3893158461283786311}
+--- !u!114 &3220744423740658198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147194211902311000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5517a397d1aa22d4691c2fcbd05c0696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &771461931
 AudioSource:
   m_ObjectHideFlags: 0
